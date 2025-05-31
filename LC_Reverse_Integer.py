@@ -1,31 +1,28 @@
-"""
-Given a signed 32-bit integer x, return x with its digits reversed. 
- If reversing x causes the value to go outside the s
- igned 32-bit integer range [-231, 231 - 1], then return 0. """
-
-class Solution:
-    def reverse(self, x: int) -> int:
+class Solution(object):
+    def reverse(self, x):
+        sign = -1 if x < 0 else 1    # Determine the sign
+        x = abs(x)                   # Work with the absolute value
         
-        INT_MIN, INT_MAX = -2**31, 2**31 - 1
-        sign = -1 if x < 0 else 1
-        x = abs(x)
         reversed_num = 0
-
+        
         while x != 0:
-            digit = x % 10
+            remainder = x % 10
             x //= 10
-            reversed_num = reversed_num * 10 + digit
-
-        reversed_num *= sign
-
-        # Check for 32-bit integer overflow
-        if reversed_num < INT_MIN or reversed_num > INT_MAX:
+            reversed_num = reversed_num * 10 + remainder
+        
+        reversed_num *= sign         # Apply the sign
+        
+        # Check for 32-bit overflow
+        if reversed_num < -2**31 or reversed_num > 2**31 - 1:
             return 0
-
+        
         return reversed_num
-    
-    # Create an instance of Solution and call reverse you cant do print(reverse(123) directly in a class)
-sol = Solution()
-print(sol.reverse(123))     # Output: 321
-print(sol.reverse(-456))    # Output: -654
-print(sol.reverse(1534236469))  # Output: 0 (overflow)
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Call the reverse method with any number and print the output
+print(solution.reverse(-123))   # Example with -123
+print(solution.reverse(1534236469))   # Example with a large number
+print(solution.reverse(120))    # Example with 120
+print(solution.reverse(0))      # Example with 0
