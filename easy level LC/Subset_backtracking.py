@@ -6,7 +6,7 @@ class Solution:
         subset = []      # Temporary list for the current subset being built
 
         def dfs(i):
-            # Base case: if we have considered all elements
+            # Base case: if we have considered all elements already
             if i >= len(nums):   #index 3 which not in list
                 res.append(subset.copy())  # Add a snapshot of current subset
                 return
