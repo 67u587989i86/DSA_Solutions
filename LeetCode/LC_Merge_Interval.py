@@ -19,7 +19,7 @@ def merge(intervals):
 
     # Step 2: Traverse and merge
     for curr in intervals[1:]:
-        last = merged[-1]
+        last = merged[-1]    # Get the last(top) merged interval
         if curr[0] <= last[1]:  # overlap
             last[1] = max(last[1], curr[1])
         else:

@@ -13,7 +13,7 @@ def sortColors(nums):
         else:  # nums[mid] == 2  append to last
             nums[mid], nums[high] = nums[high], nums[mid]
             high -= 1
-
+        # print(nums) Debugging line to see the state of nums after each operation
 
 nums = [2, 0, 2, 1 , 0 , 1, 0]
 sortColors(nums)
