@@ -1,5 +1,5 @@
 """"Return true if you can make
- a string palindrome by removing at
+c a string palindrome by removing at
    most one character."""
 
 """

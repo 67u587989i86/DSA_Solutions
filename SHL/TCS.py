@@ -27,3 +27,4 @@ def special_prime_product(n):
 # Test
 print(special_prime_product(10))  # Output: 58
 print(special_prime_product(6))  # Output: 52
+
